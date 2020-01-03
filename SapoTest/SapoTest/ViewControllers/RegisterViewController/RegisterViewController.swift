@@ -64,6 +64,7 @@ extension RegisterViewController: UITableViewDataSource {
             let inputCell = tableView.dequeueReusableCell(withIdentifier: "InputTextCell", for: indexPath) as! InputTextCell
             if let type = InputCellType(rawValue: 3) {
                 inputCell.setupCell(type: type, model: userModel)
+                inputCell.inputTextField.isSecureTextEntry = true
                 inputCell.textChanged = { (text) in
                     self.userModel.password = text
                 }
@@ -73,6 +74,7 @@ extension RegisterViewController: UITableViewDataSource {
             let inputCell = tableView.dequeueReusableCell(withIdentifier: "InputTextCell", for: indexPath) as! InputTextCell
             if let type = InputCellType(rawValue: 4) {
                 inputCell.setupCell(type: type, model: userModel)
+                inputCell.inputTextField.isSecureTextEntry = true
                 inputCell.textChanged = { (text) in
                     self.userModel.rePassword = text
                 }
@@ -109,6 +111,40 @@ extension RegisterViewController: ButtonCellDelegate {
         let vc = CitiesViewController.instantiate()
         vc.model.userName = userModel.username
         vc.model.email = userModel.email
+        validate(model: userModel)
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    func validate( model: UserRegisterModel) {
+        guard let usernameChar = model.username?.count else {
+            return
+        }
+        guard let emailChar = model.email else {return}
+        guard let passwordChar = model.password?.count else {return}
+        if usernameChar < 8 {
+            model.isShowWarning = false
+            model.warningMess = "username phải lớn hơn 8 kí tự"
+        }
+        if validateEmail(YourEMailAddress: emailChar) {
+            
+            model.isShowWarning = false
+            model.warningMess = "email không hợp lệ"
+            
+            
+        }
+        if passwordChar < 8 {
+            model.isShowWarning = false
+            model.warningMess = "password phải lớn hơn 8 kí tự"
+            
+        }
+        if (model.password != model.rePassword){
+            model.isShowWarning = false
+            model.warningMess = "repeat password phải trùng với password"
+            
+        }
+    }
+    func validateEmail(YourEMailAddress: String) -> Bool {
+        let REGEX: String
+        REGEX = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}"
+        return NSPredicate(format: "SELF MATCHES %@", REGEX).evaluate(with: YourEMailAddress)
     }
 }

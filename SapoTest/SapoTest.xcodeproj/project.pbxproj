@@ -30,6 +30,7 @@
 		1589FA2423BFDD000041FD75 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1589FA2323BFDD000041FD75 /* RadioButton.swift */; };
 		1589FA2623BFEB520041FD75 /* ShowInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1589FA2523BFEB520041FD75 /* ShowInfoViewController.swift */; };
 		1589FA2A23BFEDB00041FD75 /* InfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1589FA2923BFEDB00041FD75 /* InfoCell.swift */; };
+		1589FA2C23BFFD430041FD75 /* WelcomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1589FA2B23BFFD430041FD75 /* WelcomViewController.swift */; };
 		6F85EACED9BCB86B29E7CDD9 /* Pods_SapoTest_SapoTestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29103CA519B3DC2C2D022BA9 /* Pods_SapoTest_SapoTestUITests.framework */; };
 		723694808853801A69F687DC /* Pods_SapoTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6EA3ECB9FAF495D84DC46A1 /* Pods_SapoTestTests.framework */; };
 		8BB6004B9739A3932C721D7B /* Pods_SapoTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CB35235A7E2A497022B648C /* Pods_SapoTest.framework */; };
@@ -82,6 +83,7 @@
 		1589FA2323BFDD000041FD75 /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
 		1589FA2523BFEB520041FD75 /* ShowInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowInfoViewController.swift; sourceTree = "<group>"; };
 		1589FA2923BFEDB00041FD75 /* InfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCell.swift; sourceTree = "<group>"; };
+		1589FA2B23BFFD430041FD75 /* WelcomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomViewController.swift; sourceTree = "<group>"; };
 		29103CA519B3DC2C2D022BA9 /* Pods_SapoTest_SapoTestUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SapoTest_SapoTestUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		373C98F035EF38DE8468DBCA /* Pods-SapoTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SapoTestTests.debug.xcconfig"; path = "Target Support Files/Pods-SapoTestTests/Pods-SapoTestTests.debug.xcconfig"; sourceTree = "<group>"; };
 		48FA4355DB94F3BAD0F8CF56 /* Pods-SapoTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SapoTest.release.xcconfig"; path = "Target Support Files/Pods-SapoTest/Pods-SapoTest.release.xcconfig"; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 				1589FA1B23BFBBE50041FD75 /* District */,
 				1589FA0E23BF9A360041FD75 /* ListCity */,
 				1589F9FD23BF63950041FD75 /* RegisterViewController */,
+				1589FA2B23BFFD430041FD75 /* WelcomViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -574,6 +577,7 @@
 				1589FA2423BFDD000041FD75 /* RadioButton.swift in Sources */,
 				1589F9D023BF58580041FD75 /* AppDelegate.swift in Sources */,
 				1589FA1D23BFC38D0041FD75 /* InfoModel.swift in Sources */,
+				1589FA2C23BFFD430041FD75 /* WelcomViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

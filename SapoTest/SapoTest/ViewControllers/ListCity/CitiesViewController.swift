@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Alamofire
 class CitiesViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var listCity = [City]()

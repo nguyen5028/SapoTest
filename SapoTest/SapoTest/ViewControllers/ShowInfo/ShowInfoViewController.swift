@@ -24,6 +24,10 @@ class ShowInfoViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
     }
+    @IBAction func registerAction(_ sender: Any) {
+        let vc = WelcomViewController.instantiate()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
 extension ShowInfoViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

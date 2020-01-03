@@ -27,7 +27,9 @@ class AgeGenderViewController: UIViewController {
         self.title = "Giới tính"
         picker.delegate = self
         picker.dataSource = self
+        
         femaleButton.isSelected = true
+        infoModel.sex =  Gender(rawValue: femaleButton.tag)?.title
         picker.selectRow(17, inComponent: 0, animated: true)
         infoModel.age = "\(25)"
         // Do any additional setup after loading the view.

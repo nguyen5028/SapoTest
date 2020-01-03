@@ -38,6 +38,8 @@ class InputTextCell: UITableViewCell {
         }
         guard let emailChar = model.email?.count else {return}
         guard let passwordChar = model.password?.count else {return}
+        warningLabel.isHidden = model.isShowWarning
+        warningLabel.text = model.warningMess
         if type == .username && usernameChar < 8 {
             warningLabel.isHidden = false
             warningLabel.text = "username phải lớn hơn 8 kí tự"
@@ -66,6 +68,11 @@ class InputTextCell: UITableViewCell {
             inputTextField.attributedPlaceholder = NSAttributedString(string: type.textPlaceHolder,
                                                                       attributes: [NSAttributedString.Key.foregroundColor: UIColor.red])
         }
+    }
+    func validateEmail(YourEMailAddress: String) -> Bool {
+        let REGEX: String
+        REGEX = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}"
+        return NSPredicate(format: "SELF MATCHES %@", REGEX).evaluate(with: YourEMailAddress)
     }
 }
 extension InputTextCell: UITextFieldDelegate {

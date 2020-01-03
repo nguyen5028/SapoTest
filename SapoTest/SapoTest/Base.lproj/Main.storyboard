@@ -491,7 +491,7 @@ tuổi và giới tính</string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="nextAction:" destination="jJW-R5-fk5" eventType="touchUpInside" id="V3u-5g-eMH"/>
+                                    <action selector="registerAction:" destination="jJW-R5-fk5" eventType="touchUpInside" id="vN9-kf-Thp"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JH0-aq-OxR">
@@ -562,10 +562,10 @@ tuổi và giới tính</string>
             </objects>
             <point key="canvasLocation" x="3616.8000000000002" y="-62.518740629685162"/>
         </scene>
-        <!--View Controller-->
+        <!--Welcom View Controller-->
         <scene sceneID="dCB-hr-yeh">
             <objects>
-                <viewController id="5da-7v-Qmf" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WelcomViewController" id="5da-7v-Qmf" customClass="WelcomViewController" customModule="SapoTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zed-YP-40N">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
