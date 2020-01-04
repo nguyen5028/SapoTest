@@ -84,6 +84,7 @@ extension RegisterViewController: UITableViewDataSource {
         case 5:
             let buttonCell = tableView.dequeueReusableCell(withIdentifier: "ButtonCell", for: indexPath) as! ButtonCell
             buttonCell.delegate = self
+            buttonCell.buttonNext.layer.cornerRadius = 20
             return buttonCell
         default:
             return UITableViewCell()
@@ -111,33 +112,32 @@ extension RegisterViewController: ButtonCellDelegate {
         let vc = CitiesViewController.instantiate()
         vc.model.userName = userModel.username
         vc.model.email = userModel.email
+        userModel.isShowWarning = false
         validate(model: userModel)
-        self.navigationController?.pushViewController(vc, animated: true)
+        if userModel.username.count > 8 && userModel.password.count > 8 && (userModel.password == userModel.rePassword) && validateEmail(YourEMailAddress: userModel.email) {
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        
     }
     func validate( model: UserRegisterModel) {
-        guard let usernameChar = model.username?.count else {
-            return
-        }
-        guard let emailChar = model.email else {return}
-        guard let passwordChar = model.password?.count else {return}
-        if usernameChar < 8 {
-            model.isShowWarning = false
+        if model.username.count < 8 {
+            model.isShowWarning = true
             model.warningMess = "username phải lớn hơn 8 kí tự"
         }
-        if validateEmail(YourEMailAddress: emailChar) {
+        if !validateEmail(YourEMailAddress: model.email) {
             
-            model.isShowWarning = false
+            model.isShowWarning = true
             model.warningMess = "email không hợp lệ"
             
             
         }
-        if passwordChar < 8 {
-            model.isShowWarning = false
+        if model.password.count < 8 {
+            model.isShowWarning = true
             model.warningMess = "password phải lớn hơn 8 kí tự"
             
         }
         if (model.password != model.rePassword){
-            model.isShowWarning = false
+            model.isShowWarning = true
             model.warningMess = "repeat password phải trùng với password"
             
         }

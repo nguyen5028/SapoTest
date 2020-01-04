@@ -8,11 +8,11 @@
 
 import Foundation
 class UserRegisterModel: NSObject {
-    var username: String?
-    var email: String?
-    var password: String?
-    var rePassword: String?
+    var username: String = ""
+    var email: String = ""
+    var password: String = ""
+    var rePassword: String = ""
     var isShowWarning: Bool = false
-    var warningMess: String?
+    var warningMess: String = ""
     
 }

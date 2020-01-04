@@ -33,28 +33,23 @@ class InputTextCell: UITableViewCell {
         // Configure the view for the selected state
     }
     func validate(type: InputCellType, model: UserRegisterModel) {
-        guard let usernameChar = model.username?.count else {
-            return
-        }
-        guard let emailChar = model.email?.count else {return}
-        guard let passwordChar = model.password?.count else {return}
         warningLabel.isHidden = model.isShowWarning
         warningLabel.text = model.warningMess
-        if type == .username && usernameChar < 8 {
+        if type == .username && model.username.count < 8 {
             warningLabel.isHidden = false
             warningLabel.text = "username phải lớn hơn 8 kí tự"
             warningLabel.textColor = .red
             inputTextField.attributedPlaceholder = NSAttributedString(string: type.textPlaceHolder,
                                                                       attributes: [NSAttributedString.Key.foregroundColor: UIColor.red])
         }
-        if type == .email && emailChar < 8 {
+        if type == .email && model.email.count < 8 {
             warningLabel.isHidden = false
             warningLabel.text = "email không hợp lệ"
             warningLabel.textColor = .red
             inputTextField.attributedPlaceholder = NSAttributedString(string: type.textPlaceHolder,
                                                                       attributes: [NSAttributedString.Key.foregroundColor: UIColor.red])
         }
-        if type == .password && passwordChar < 8 {
+        if type == .password && model.password.count < 8 {
             warningLabel.isHidden = false
             warningLabel.text = "password phải lớn hơn 8 kí tự"
             warningLabel.textColor = .red
