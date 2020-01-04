@@ -13,10 +13,13 @@ class AgeGenderViewController: UIViewController {
     @IBOutlet weak var picker: UIPickerView!
     var ageValues: [Int] = [Int](8...80)
     var infoModel = InfoModel()
+    @IBOutlet var genderButtons: [UIButton]!
     @IBOutlet weak var otherButton: KGRadioButton!
-    
     @IBOutlet weak var maleButton: KGRadioButton!
     @IBOutlet weak var femaleButton: KGRadioButton!
+    @IBOutlet weak var coverFemale: UIButton!
+    @IBOutlet weak var coverMale: UIButton!
+    @IBOutlet weak var coverOther: UIButton!
     static func instantiate() -> AgeGenderViewController {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyBoard.instantiateViewController(withIdentifier: "AgeGenderViewController") as! AgeGenderViewController
@@ -29,28 +32,31 @@ class AgeGenderViewController: UIViewController {
         picker.dataSource = self
         
         femaleButton.isSelected = true
-        infoModel.sex =  Gender(rawValue: femaleButton.tag)?.title
+        infoModel.sex = Sex.Nữ.rawValue
         picker.selectRow(17, inComponent: 0, animated: true)
         infoModel.age = "\(25)"
         // Do any additional setup after loading the view.
     }
-    @IBAction func otherAction(_ sender: KGRadioButton) {
-        sender.isSelected = !sender.isSelected
-        infoModel.sex = Gender(rawValue: sender.tag)?.title
-        femaleButton.isSelected = false
-        maleButton.isSelected = false
-    }
-    @IBAction func maleAction(_ sender: KGRadioButton) {
-        sender.isSelected = !sender.isSelected
-        infoModel.sex = Gender(rawValue: sender.tag)?.title
-        femaleButton.isSelected = false
-        otherButton.isSelected = false
-    }
-    @IBAction func femaleAction(_ sender: KGRadioButton) {
-        sender.isSelected = !sender.isSelected
-        infoModel.sex = Gender(rawValue: sender.tag)?.title
-        maleButton.isSelected = false
-        otherButton.isSelected = false
+    
+    @IBAction func genderSelected(_ sender: UIButton) {
+        genderButtons.forEach { button in
+            button.isSelected = false
+            femaleButton.isSelected = false
+            maleButton.isSelected = false
+            otherButton.isSelected = false
+        }
+        if sender == coverFemale {
+            femaleButton.isSelected = true
+            infoModel.sex = Sex.Nữ.rawValue
+            return
+        }
+        if sender == coverMale {
+            maleButton.isSelected = true
+            infoModel.sex = Sex.Nam.rawValue
+            return
+        }
+        otherButton.isSelected = true
+        infoModel.sex = Sex.Khác.rawValue
     }
     @IBAction func nextAction(_ sender: Any) {
         let vc = ShowInfoViewController.instantiate()

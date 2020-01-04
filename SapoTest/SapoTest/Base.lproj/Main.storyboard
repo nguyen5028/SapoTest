@@ -277,11 +277,11 @@ tuổi và giới tính</string>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BX2-HV-CGU">
                                 <rect key="frame" x="125" y="222.5" width="125" height="222"/>
                             </pickerView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="R5K-gf-RMe">
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="R5K-gf-RMe">
                                 <rect key="frame" x="37.5" y="444.5" width="300" height="51"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hyu-Xf-WrK">
-                                        <rect key="frame" x="0.0" y="0.0" width="100" height="51"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="94.5" height="51"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZR8-QW-IKH" customClass="KGRadioButton" customModule="SapoTest" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="13.5" width="24" height="24"/>
@@ -304,9 +304,6 @@ tuổi và giới tính</string>
                                                         <real key="value" value="3"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="femaleAction:" destination="dt8-ox-h7o" eventType="touchUpInside" id="sco-tE-Ccr"/>
-                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nữ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gsf-PE-tW9">
                                                 <rect key="frame" x="28" y="15.5" width="23" height="20.5"/>
@@ -314,17 +311,27 @@ tuổi và giới tính</string>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ciX-3g-eej">
+                                                <rect key="frame" x="0.0" y="0.0" width="94.5" height="51"/>
+                                                <connections>
+                                                    <action selector="genderSelected:" destination="dt8-ox-h7o" eventType="touchUpInside" id="VIO-fz-Mg1"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="ciX-3g-eej" firstAttribute="top" secondItem="hyu-Xf-WrK" secondAttribute="top" id="8ud-V9-iab"/>
+                                            <constraint firstAttribute="bottom" secondItem="ciX-3g-eej" secondAttribute="bottom" id="Dlv-PB-Qof"/>
                                             <constraint firstItem="ZR8-QW-IKH" firstAttribute="leading" secondItem="hyu-Xf-WrK" secondAttribute="leading" id="Nol-Wu-WIB"/>
                                             <constraint firstItem="ZR8-QW-IKH" firstAttribute="centerY" secondItem="hyu-Xf-WrK" secondAttribute="centerY" id="S8y-Qh-uUz"/>
                                             <constraint firstItem="gsf-PE-tW9" firstAttribute="centerY" secondItem="ZR8-QW-IKH" secondAttribute="centerY" id="aD6-eM-JVG"/>
                                             <constraint firstItem="gsf-PE-tW9" firstAttribute="leading" secondItem="ZR8-QW-IKH" secondAttribute="trailing" constant="4" id="b6R-tr-Fen"/>
+                                            <constraint firstAttribute="trailing" secondItem="ciX-3g-eej" secondAttribute="trailing" id="okZ-ds-wit"/>
+                                            <constraint firstItem="ciX-3g-eej" firstAttribute="leading" secondItem="hyu-Xf-WrK" secondAttribute="leading" id="ytT-4H-A9s"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="raE-J3-s0u">
-                                        <rect key="frame" x="100" y="0.0" width="100" height="51"/>
+                                        <rect key="frame" x="102.5" y="0.0" width="95" height="51"/>
                                         <subviews>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2RH-3z-AHC" customClass="KGRadioButton" customModule="SapoTest" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="13.5" width="24" height="24"/>
@@ -347,9 +354,6 @@ tuổi và giới tính</string>
                                                         <real key="value" value="3"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="maleAction:" destination="dt8-ox-h7o" eventType="touchUpInside" id="wWH-Gn-eUd"/>
-                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nam" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P4c-sc-iwg">
                                                 <rect key="frame" x="28" y="15.5" width="36" height="20.5"/>
@@ -357,17 +361,27 @@ tuổi và giới tính</string>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mJQ-h8-VJa">
+                                                <rect key="frame" x="0.0" y="0.0" width="95" height="51"/>
+                                                <connections>
+                                                    <action selector="genderSelected:" destination="dt8-ox-h7o" eventType="touchUpInside" id="Xqr-cJ-GyP"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="2RH-3z-AHC" firstAttribute="leading" secondItem="raE-J3-s0u" secondAttribute="leading" id="5Kz-aw-adi"/>
                                             <constraint firstItem="P4c-sc-iwg" firstAttribute="centerY" secondItem="2RH-3z-AHC" secondAttribute="centerY" id="7po-68-vJr"/>
                                             <constraint firstItem="P4c-sc-iwg" firstAttribute="leading" secondItem="2RH-3z-AHC" secondAttribute="trailing" constant="4" id="aJf-0L-U3t"/>
+                                            <constraint firstItem="mJQ-h8-VJa" firstAttribute="leading" secondItem="raE-J3-s0u" secondAttribute="leading" id="cgL-gQ-I6v"/>
+                                            <constraint firstAttribute="trailing" secondItem="mJQ-h8-VJa" secondAttribute="trailing" id="e1u-Fv-zJw"/>
+                                            <constraint firstAttribute="bottom" secondItem="mJQ-h8-VJa" secondAttribute="bottom" id="qDn-yg-CbJ"/>
                                             <constraint firstItem="2RH-3z-AHC" firstAttribute="centerY" secondItem="raE-J3-s0u" secondAttribute="centerY" id="uoG-Xq-xeb"/>
+                                            <constraint firstItem="mJQ-h8-VJa" firstAttribute="top" secondItem="raE-J3-s0u" secondAttribute="top" id="xL4-bY-4ZQ"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ekY-C5-MLc">
-                                        <rect key="frame" x="200" y="0.0" width="100" height="51"/>
+                                        <rect key="frame" x="205.5" y="0.0" width="94.5" height="51"/>
                                         <subviews>
                                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PYF-qT-Ft0" customClass="KGRadioButton" customModule="SapoTest" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="13.5" width="24" height="24"/>
@@ -390,10 +404,6 @@ tuổi và giới tính</string>
                                                         <real key="value" value="3"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="femaleAction:" destination="dt8-ox-h7o" eventType="touchUpInside" id="XK2-Fv-My9"/>
-                                                    <action selector="otherAction:" destination="dt8-ox-h7o" eventType="touchUpInside" id="QOC-Ln-ZkP"/>
-                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Khác" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FAc-kZ-bPc">
                                                 <rect key="frame" x="28" y="15.5" width="39" height="20.5"/>
@@ -401,13 +411,23 @@ tuổi và giới tính</string>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xy8-7x-SK6">
+                                                <rect key="frame" x="0.0" y="0.0" width="94.5" height="51"/>
+                                                <connections>
+                                                    <action selector="genderSelected:" destination="dt8-ox-h7o" eventType="touchUpInside" id="UuX-Z2-JJi"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="FAc-kZ-bPc" firstAttribute="centerY" secondItem="PYF-qT-Ft0" secondAttribute="centerY" id="Bo2-Pr-4dB"/>
                                             <constraint firstItem="FAc-kZ-bPc" firstAttribute="leading" secondItem="PYF-qT-Ft0" secondAttribute="trailing" constant="4" id="Eda-8c-Pg3"/>
                                             <constraint firstItem="PYF-qT-Ft0" firstAttribute="centerY" secondItem="ekY-C5-MLc" secondAttribute="centerY" id="H6v-gA-X8L"/>
+                                            <constraint firstItem="Xy8-7x-SK6" firstAttribute="top" secondItem="ekY-C5-MLc" secondAttribute="top" id="TCZ-MI-A8I"/>
+                                            <constraint firstItem="Xy8-7x-SK6" firstAttribute="leading" secondItem="ekY-C5-MLc" secondAttribute="leading" id="agN-Dl-N5m"/>
+                                            <constraint firstAttribute="bottom" secondItem="Xy8-7x-SK6" secondAttribute="bottom" id="lks-kn-JK2"/>
                                             <constraint firstItem="PYF-qT-Ft0" firstAttribute="leading" secondItem="ekY-C5-MLc" secondAttribute="leading" id="ngk-kv-eLa"/>
+                                            <constraint firstAttribute="trailing" secondItem="Xy8-7x-SK6" secondAttribute="trailing" id="ujB-W4-WRB"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -453,10 +473,16 @@ tuổi và giới tính</string>
                         <viewLayoutGuide key="safeArea" id="VzU-1h-InD"/>
                     </view>
                     <connections>
+                        <outlet property="coverFemale" destination="ciX-3g-eej" id="ecg-4F-wjS"/>
+                        <outlet property="coverMale" destination="mJQ-h8-VJa" id="X1L-kF-EW2"/>
+                        <outlet property="coverOther" destination="Xy8-7x-SK6" id="cBH-hq-awC"/>
                         <outlet property="femaleButton" destination="ZR8-QW-IKH" id="4xc-pd-xUg"/>
                         <outlet property="maleButton" destination="2RH-3z-AHC" id="0k5-6O-vwz"/>
                         <outlet property="otherButton" destination="PYF-qT-Ft0" id="FlA-Cp-COF"/>
                         <outlet property="picker" destination="BX2-HV-CGU" id="Vze-Lt-uMT"/>
+                        <outletCollection property="genderButtons" destination="Xy8-7x-SK6" collectionClass="NSMutableArray" id="neN-mu-EKg"/>
+                        <outletCollection property="genderButtons" destination="mJQ-h8-VJa" collectionClass="NSMutableArray" id="GES-1M-7z2"/>
+                        <outletCollection property="genderButtons" destination="ciX-3g-eej" collectionClass="NSMutableArray" id="Bse-JE-MpS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VPW-gD-0mA" userLabel="First Responder" sceneMemberID="firstResponder"/>
