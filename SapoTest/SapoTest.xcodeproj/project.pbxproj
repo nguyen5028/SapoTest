@@ -35,6 +35,7 @@
 		6F85EACED9BCB86B29E7CDD9 /* Pods_SapoTest_SapoTestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29103CA519B3DC2C2D022BA9 /* Pods_SapoTest_SapoTestUITests.framework */; };
 		723694808853801A69F687DC /* Pods_SapoTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6EA3ECB9FAF495D84DC46A1 /* Pods_SapoTestTests.framework */; };
 		8BB6004B9739A3932C721D7B /* Pods_SapoTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CB35235A7E2A497022B648C /* Pods_SapoTest.framework */; };
+		CB4A9F7223C70F5F008A11DF /* APIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4A9F7123C70F5F008A11DF /* APIHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 		8D54EC77C1B4E08FAD3EA07E /* Pods-SapoTestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SapoTestTests.release.xcconfig"; path = "Target Support Files/Pods-SapoTestTests/Pods-SapoTestTests.release.xcconfig"; sourceTree = "<group>"; };
 		A6EA3ECB9FAF495D84DC46A1 /* Pods_SapoTestTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SapoTestTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0EA8732370A6A3BCD2820EC /* Pods-SapoTest-SapoTestUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SapoTest-SapoTestUITests.release.xcconfig"; path = "Target Support Files/Pods-SapoTest-SapoTestUITests/Pods-SapoTest-SapoTestUITests.release.xcconfig"; sourceTree = "<group>"; };
+		CB4A9F7123C70F5F008A11DF /* APIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 		1589F9CE23BF58580041FD75 /* SapoTest */ = {
 			isa = PBXGroup;
 			children = (
+				CB4A9F7023C70F4D008A11DF /* Helper */,
 				1589FA0B23BF861F0041FD75 /* Models */,
 				1589FA0823BF79110041FD75 /* Extension */,
 				1589F9FF23BF63EC0041FD75 /* ViewControllers */,
@@ -321,6 +324,14 @@
 				8D54EC77C1B4E08FAD3EA07E /* Pods-SapoTestTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		CB4A9F7023C70F4D008A11DF /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				CB4A9F7123C70F5F008A11DF /* APIHelper.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -571,6 +582,7 @@
 				1589FA0A23BF7AA70041FD75 /* UIViewExtension.swift in Sources */,
 				1589FA0423BF69350041FD75 /* HeaderCell.swift in Sources */,
 				1589FA0223BF64360041FD75 /* InputTextCell.swift in Sources */,
+				CB4A9F7223C70F5F008A11DF /* APIHelper.swift in Sources */,
 				1589FA1F23BFC7960041FD75 /* District.swift in Sources */,
 				1589F9D223BF58580041FD75 /* RegisterViewController.swift in Sources */,
 				1589FA1423BF9C560041FD75 /* CityCell.swift in Sources */,

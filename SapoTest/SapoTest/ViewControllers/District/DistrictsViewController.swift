@@ -27,35 +27,35 @@ class DistrictsViewController: UIViewController {
         tableView.dataSource = self
         let nib = UINib(nibName: "CityCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "CityCell")
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         listDistrict.removeAll()
         filerDis.removeAll()
+        APIHelper.shared.checkFileExits(fileName: "Districts.json")
         getData()
     }
     func getData() {
         let urlString = "https://raw.githubusercontent.com/sapo-tech/home_test_mobile/master/Districts.json"
-        guard let url = URL(string: urlString) else {return}
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
-            if error == nil && data != nil {
-                do {
-                    let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as! [String: Any]
-                    // Access specific key with value of type String
-                    let districts = json["Districts"] as! [Dictionary<String, Any>]
-                    for dis in districts {
-                        let aDis = District(dict: dis)
-                        self.listDistrict.append(aDis)
-                    }
-                    self.filerDis = self.listDistrict.filter {$0.cityCode == self.infoModel.city.code}
-                    DispatchQueue.main.async {
-                        self.tableView.reloadData()
-                    }
-                } catch {
-                    print("Error download file")
+        APIHelper.shared.getDistricts(urlString: urlString) { response in
+            switch response.result {
+                
+            case .success( let json):
+                let value = json as! [String: Any]
+                let districts = value["Districts"] as! [Dictionary<String, Any>]
+                for dis in districts {
+                    let aDis = District(dict: dis)
+                    self.listDistrict.append(aDis)
                 }
+                self.filerDis = self.listDistrict.filter {$0.cityCode == self.infoModel.city.code}
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            case .failure(let error):
+                print(error.localizedDescription)
             }
-            }.resume()
+        }
     }
 
 }

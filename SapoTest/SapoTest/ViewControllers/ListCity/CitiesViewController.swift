@@ -26,33 +26,56 @@ class CitiesViewController: UIViewController {
         tableView.dataSource = self
         let nib = UINib(nibName: "CityCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "CityCell")
+        listCity.removeAll()
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        listCity.removeAll()
+        APIHelper.shared.checkFileExits(fileName: "Cities.json")
         getData()
     }
+//    func getData() {
+//        let urlString = "https://raw.githubusercontent.com/sapo-tech/home_test_mobile/master/Cities.json"
+//        guard let url = URL(string: urlString) else {return}
+//        URLSession.shared.dataTask(with: url) { (data, response, error) in
+//            if error == nil && data != nil {
+//                do {
+//                    let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as! [String: Any]
+//                    // Access specific key with value of type String
+//                    let cities = json["Cities"] as! [Dictionary<String, Any>]
+//                    for city in cities {
+//                        let aCity = City(dictionary: city)
+//                        self.listCity.append(aCity)
+//                    }
+//                    DispatchQueue.main.async {
+//                        self.tableView.reloadData()
+//                    }
+//                } catch {
+//                    print("Error download file")
+//                }
+//            }
+//        }.resume()
+//    }
     func getData() {
         let urlString = "https://raw.githubusercontent.com/sapo-tech/home_test_mobile/master/Cities.json"
-        guard let url = URL(string: urlString) else {return}
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
-            if error == nil && data != nil {
-                do {
-                    let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as! [String: Any]
-                    // Access specific key with value of type String
-                    let cities = json["Cities"] as! [Dictionary<String, Any>]
-                    for city in cities {
-                        let aCity = City(dictionary: city)
-                        self.listCity.append(aCity)
-                    }
-                    DispatchQueue.main.async {
-                        self.tableView.reloadData()
-                    }
-                } catch {
-                    print("Error download file")
+        APIHelper.shared.getCities(urlString: urlString) { response in
+            print("Rs:", response)
+            switch response.result {
+            case .success(let json):
+                let value = json as! [String: Any]
+                let cities = value["Cities"] as! [[String: Any]]
+                for city in cities {
+                    let aCity = City(dictionary: city)
+                    self.listCity.append(aCity)
                 }
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            case .failure(let error):
+                print("Error:", error.localizedDescription)
             }
-        }.resume()
+            
+        }
     }
 }
 extension CitiesViewController: UITableViewDelegate {
