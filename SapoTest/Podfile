@@ -6,6 +6,7 @@ target 'SapoTest' do
   use_frameworks!
 	pod 'IQKeyboardManagerSwift'
 	pod 'Alamofire', '~> 4.9'
+        pod 'SVProgressHUD'
   # Pods for SapoTest
 
   target 'SapoTestTests' do

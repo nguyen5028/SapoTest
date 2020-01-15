@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SVProgressHUD
 class DistrictsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var listDistrict = [District]()
@@ -33,27 +33,20 @@ class DistrictsViewController: UIViewController {
         super.viewWillAppear(animated)
         listDistrict.removeAll()
         filerDis.removeAll()
-        APIHelper.shared.checkFileExits(fileName: "Districts.json")
+        //APIHelper.shared.checkFileExits(fileName: "Districts.json")
+        SVProgressHUD.show()
         getData()
     }
     func getData() {
         let urlString = "https://raw.githubusercontent.com/sapo-tech/home_test_mobile/master/Districts.json"
-        APIHelper.shared.getDistricts(urlString: urlString) { response in
-            switch response.result {
-                
-            case .success( let json):
-                let value = json as! [String: Any]
-                let districts = value["Districts"] as! [Dictionary<String, Any>]
-                for dis in districts {
-                    let aDis = District(dict: dis)
-                    self.listDistrict.append(aDis)
-                }
-                self.filerDis = self.listDistrict.filter {$0.cityCode == self.infoModel.city.code}
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
-            case .failure(let error):
-                print(error.localizedDescription)
+        APIHelper.shared.getDistricts(urlString: urlString) { districts in
+            self.listDistrict.removeAll()
+            //self.filerDis = self.listDistrict.filter {$0.cityCode == self.infoModel.city.code}
+
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+                SVProgressHUD.dismiss()
             }
         }
     }

@@ -21,7 +21,6 @@
 		1589FA0D23BF86500041FD75 /* UserRegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1589FA0C23BF86500041FD75 /* UserRegisterModel.swift */; };
 		1589FA1023BF9A720041FD75 /* CitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1589FA0F23BF9A720041FD75 /* CitiesViewController.swift */; };
 		1589FA1423BF9C560041FD75 /* CityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1589FA1223BF9C560041FD75 /* CityCell.swift */; };
-		1589FA1523BF9C560041FD75 /* CityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1589FA1323BF9C560041FD75 /* CityCell.xib */; };
 		1589FA1823BFAE1F0041FD75 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1589FA1723BFAE1F0041FD75 /* City.swift */; };
 		1589FA1A23BFBBDD0041FD75 /* DistrictsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1589FA1923BFBBDD0041FD75 /* DistrictsViewController.swift */; };
 		1589FA1D23BFC38D0041FD75 /* InfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1589FA1C23BFC38D0041FD75 /* InfoModel.swift */; };
@@ -36,6 +35,8 @@
 		723694808853801A69F687DC /* Pods_SapoTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6EA3ECB9FAF495D84DC46A1 /* Pods_SapoTestTests.framework */; };
 		8BB6004B9739A3932C721D7B /* Pods_SapoTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CB35235A7E2A497022B648C /* Pods_SapoTest.framework */; };
 		CB4A9F7223C70F5F008A11DF /* APIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4A9F7123C70F5F008A11DF /* APIHelper.swift */; };
+		CB4A9FB623CB6EE9008A11DF /* ListCity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB4A9FB523CB6EE9008A11DF /* ListCity.storyboard */; };
+		CB4A9FB823CB7C70008A11DF /* Gender.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB4A9FB723CB7C70008A11DF /* Gender.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,7 +77,6 @@
 		1589FA0C23BF86500041FD75 /* UserRegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegisterModel.swift; sourceTree = "<group>"; };
 		1589FA0F23BF9A720041FD75 /* CitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesViewController.swift; sourceTree = "<group>"; };
 		1589FA1223BF9C560041FD75 /* CityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCell.swift; sourceTree = "<group>"; };
-		1589FA1323BF9C560041FD75 /* CityCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityCell.xib; sourceTree = "<group>"; };
 		1589FA1723BFAE1F0041FD75 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		1589FA1923BFBBDD0041FD75 /* DistrictsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistrictsViewController.swift; sourceTree = "<group>"; };
 		1589FA1C23BFC38D0041FD75 /* InfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoModel.swift; sourceTree = "<group>"; };
@@ -97,6 +97,8 @@
 		A6EA3ECB9FAF495D84DC46A1 /* Pods_SapoTestTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SapoTestTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0EA8732370A6A3BCD2820EC /* Pods-SapoTest-SapoTestUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SapoTest-SapoTestUITests.release.xcconfig"; path = "Target Support Files/Pods-SapoTest-SapoTestUITests/Pods-SapoTest-SapoTestUITests.release.xcconfig"; sourceTree = "<group>"; };
 		CB4A9F7123C70F5F008A11DF /* APIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHelper.swift; sourceTree = "<group>"; };
+		CB4A9FB523CB6EE9008A11DF /* ListCity.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListCity.storyboard; sourceTree = "<group>"; };
+		CB4A9FB723CB7C70008A11DF /* Gender.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Gender.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,12 +186,12 @@
 			path = SapoTestUITests;
 			sourceTree = "<group>";
 		};
-		1589F9FD23BF63950041FD75 /* RegisterViewController */ = {
+		1589F9FD23BF63950041FD75 /* Register */ = {
 			isa = PBXGroup;
 			children = (
 				1589F9D123BF58580041FD75 /* RegisterViewController.swift */,
 			);
-			path = RegisterViewController;
+			path = Register;
 			sourceTree = "<group>";
 		};
 		1589F9FE23BF63CB0041FD75 /* Cells */ = {
@@ -209,7 +211,7 @@
 				1589FA2023BFD5150041FD75 /* AgeGenderVC */,
 				1589FA1B23BFBBE50041FD75 /* District */,
 				1589FA0E23BF9A360041FD75 /* ListCity */,
-				1589F9FD23BF63950041FD75 /* RegisterViewController */,
+				1589F9FD23BF63950041FD75 /* Register */,
 				1589FA2B23BFFD430041FD75 /* WelcomViewController.swift */,
 			);
 			path = ViewControllers;
@@ -249,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				1589FA0F23BF9A720041FD75 /* CitiesViewController.swift */,
+				CB4A9FB523CB6EE9008A11DF /* ListCity.storyboard */,
 			);
 			path = ListCity;
 			sourceTree = "<group>";
@@ -257,7 +260,6 @@
 			isa = PBXGroup;
 			children = (
 				1589FA1223BF9C560041FD75 /* CityCell.swift */,
-				1589FA1323BF9C560041FD75 /* CityCell.xib */,
 			);
 			path = CityCell;
 			sourceTree = "<group>";
@@ -283,6 +285,7 @@
 			isa = PBXGroup;
 			children = (
 				1589FA2123BFD5460041FD75 /* AgeGenderViewController.swift */,
+				CB4A9FB723CB7C70008A11DF /* Gender.storyboard */,
 			);
 			path = AgeGenderVC;
 			sourceTree = "<group>";
@@ -444,8 +447,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1589F9DA23BF585A0041FD75 /* LaunchScreen.storyboard in Resources */,
+				CB4A9FB823CB7C70008A11DF /* Gender.storyboard in Resources */,
 				1589F9D723BF585A0041FD75 /* Assets.xcassets in Resources */,
-				1589FA1523BF9C560041FD75 /* CityCell.xib in Resources */,
+				CB4A9FB623CB6EE9008A11DF /* ListCity.storyboard in Resources */,
 				1589F9D523BF58580041FD75 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
