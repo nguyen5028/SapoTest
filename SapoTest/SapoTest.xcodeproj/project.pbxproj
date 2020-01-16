@@ -37,6 +37,9 @@
 		CB4A9F7223C70F5F008A11DF /* APIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4A9F7123C70F5F008A11DF /* APIHelper.swift */; };
 		CB4A9FB623CB6EE9008A11DF /* ListCity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB4A9FB523CB6EE9008A11DF /* ListCity.storyboard */; };
 		CB4A9FB823CB7C70008A11DF /* Gender.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB4A9FB723CB7C70008A11DF /* Gender.storyboard */; };
+		CBC9852923CF5B59003BDA40 /* ShowInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBC9852823CF5B59003BDA40 /* ShowInfo.storyboard */; };
+		CBF1C53823CF5E320053A7C5 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBF1C53723CF5E320053A7C5 /* Welcome.storyboard */; };
+		CBF1C53A23CF7B0B0053A7C5 /* RadioCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF1C53923CF7B0B0053A7C5 /* RadioCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +102,9 @@
 		CB4A9F7123C70F5F008A11DF /* APIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHelper.swift; sourceTree = "<group>"; };
 		CB4A9FB523CB6EE9008A11DF /* ListCity.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListCity.storyboard; sourceTree = "<group>"; };
 		CB4A9FB723CB7C70008A11DF /* Gender.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Gender.storyboard; sourceTree = "<group>"; };
+		CBC9852823CF5B59003BDA40 /* ShowInfo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ShowInfo.storyboard; sourceTree = "<group>"; };
+		CBF1C53723CF5E320053A7C5 /* Welcome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
+		CBF1C53923CF7B0B0053A7C5 /* RadioCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RadioCell.swift; path = ../../Cells/RadioCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,12 +213,12 @@
 		1589F9FF23BF63EC0041FD75 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				CBF1C53623CF5E120053A7C5 /* Welcome */,
 				1589FA2723BFEB5D0041FD75 /* ShowInfo */,
 				1589FA2023BFD5150041FD75 /* AgeGenderVC */,
 				1589FA1B23BFBBE50041FD75 /* District */,
 				1589FA0E23BF9A360041FD75 /* ListCity */,
 				1589F9FD23BF63950041FD75 /* Register */,
-				1589FA2B23BFFD430041FD75 /* WelcomViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -286,6 +292,7 @@
 			children = (
 				1589FA2123BFD5460041FD75 /* AgeGenderViewController.swift */,
 				CB4A9FB723CB7C70008A11DF /* Gender.storyboard */,
+				CBF1C53923CF7B0B0053A7C5 /* RadioCell.swift */,
 			);
 			path = AgeGenderVC;
 			sourceTree = "<group>";
@@ -294,6 +301,7 @@
 			isa = PBXGroup;
 			children = (
 				1589FA2523BFEB520041FD75 /* ShowInfoViewController.swift */,
+				CBC9852823CF5B59003BDA40 /* ShowInfo.storyboard */,
 			);
 			path = ShowInfo;
 			sourceTree = "<group>";
@@ -335,6 +343,15 @@
 				CB4A9F7123C70F5F008A11DF /* APIHelper.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		CBF1C53623CF5E120053A7C5 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				1589FA2B23BFFD430041FD75 /* WelcomViewController.swift */,
+				CBF1C53723CF5E320053A7C5 /* Welcome.storyboard */,
+			);
+			path = Welcome;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -447,10 +464,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				1589F9DA23BF585A0041FD75 /* LaunchScreen.storyboard in Resources */,
+				CBC9852923CF5B59003BDA40 /* ShowInfo.storyboard in Resources */,
 				CB4A9FB823CB7C70008A11DF /* Gender.storyboard in Resources */,
 				1589F9D723BF585A0041FD75 /* Assets.xcassets in Resources */,
 				CB4A9FB623CB6EE9008A11DF /* ListCity.storyboard in Resources */,
 				1589F9D523BF58580041FD75 /* Main.storyboard in Resources */,
+				CBF1C53823CF5E320053A7C5 /* Welcome.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -591,6 +610,7 @@
 				1589F9D223BF58580041FD75 /* RegisterViewController.swift in Sources */,
 				1589FA1423BF9C560041FD75 /* CityCell.swift in Sources */,
 				1589FA1023BF9A720041FD75 /* CitiesViewController.swift in Sources */,
+				CBF1C53A23CF7B0B0053A7C5 /* RadioCell.swift in Sources */,
 				1589FA2A23BFEDB00041FD75 /* InfoCell.swift in Sources */,
 				1589FA0723BF6B1B0041FD75 /* ButtonCell.swift in Sources */,
 				1589FA2423BFDD000041FD75 /* RadioButton.swift in Sources */,

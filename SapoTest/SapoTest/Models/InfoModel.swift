@@ -8,10 +8,10 @@
 
 import Foundation
 class InfoModel {
-    var userName: String!
-    var email: String!
-    var sex: String!
-    var age: String!
+    var userName: String = ""
+    var email: String = ""
+    var sex: String = ""
+    var age: String = ""
     var city: City!
     var district: District!
 }

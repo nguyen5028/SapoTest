@@ -58,10 +58,14 @@ class AgeGenderViewController: UIViewController {
         otherButton.isSelected = true
         infoModel.sex = Sex.Khác.rawValue
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        UserDefaults.standard.set(infoModel.sex, forKey: "Gender")
+        UserDefaults.standard.set(infoModel.age, forKey: "Age")
+    }
     @IBAction func nextAction(_ sender: Any) {
-        let vc = ShowInfoViewController.instantiate()
-        vc.model = infoModel
-        self.navigationController?.pushViewController(vc, animated: true)
+//        let vc = ShowInfoViewController.instantiate()
+//        vc.model = infoModel
+//        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 extension AgeGenderViewController: UIPickerViewDelegate, UIPickerViewDataSource {

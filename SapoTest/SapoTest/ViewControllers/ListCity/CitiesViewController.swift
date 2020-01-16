@@ -11,6 +11,7 @@ import SVProgressHUD
 class CitiesViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var contentDescription: UILabel!
+    var index: Int!
     var listCity = [City]()
     var listDistrict = [District]()
     var isDistrict = false
@@ -52,8 +53,9 @@ class CitiesViewController: UIViewController {
             let urlString = "https://raw.githubusercontent.com/sapo-tech/home_test_mobile/master/Districts.json"
             APIHelper.shared.getDistricts(urlString: urlString) { districts in
                 self.listDistrict.removeAll()
+                let code = UserDefaults.standard.integer(forKey: "code")
                 self.listDistrict = districts.filter {
-                    $0.cityCode == self.model.city.code
+                    $0.cityCode == code
                 }
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.75) {
                     self.tableView.reloadData()
@@ -64,8 +66,9 @@ class CitiesViewController: UIViewController {
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "pushGender" {
-            let destination = segue.destination as! AgeGenderViewController
-            
+            let district = self.listDistrict[index]
+            UserDefaults.standard.set(district.districtCode, forKey: "districtCode")
+            UserDefaults.standard.set(district.name, forKey: "District name")
         }
     }
     
@@ -113,12 +116,15 @@ extension CitiesViewController: UITableViewDataSource {
 }
 extension CitiesViewController: CityCellDelegate {
     func onClick(index: Int) {
+        self.index = index
         if !isDistrict {
             let vc = CitiesViewController.instantiate()
             let city = listCity[index]
             vc.isDistrict = true
-            model.city = city
-            vc.model = model
+//            model.city = city
+//            vc.model = model
+            UserDefaults.standard.set(city.code, forKey: "code")
+            UserDefaults.standard.set(city.name, forKey: "City Name")
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }

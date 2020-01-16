@@ -38,17 +38,23 @@ extension ShowInfoViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "InfoCell", for: indexPath) as! InfoCell
         switch indexPath.row {
         case 0:
-            cell.setupCell(title: "Tên đăng nhập", content: model.userName)
+            let username = UserDefaults.standard.string(forKey: "Username") ?? ""
+            cell.setupCell(title: "Tên đăng nhập", content: username)
         case 1:
-            cell.setupCell(title: "Email", content: model.email)
+            let email = UserDefaults.standard.string(forKey: "Email") ?? ""
+            cell.setupCell(title: "Email", content: email)
         case 2:
-            cell.setupCell(title: "Giới tính", content: model.sex)
+            let sex = UserDefaults.standard.string(forKey: "Gender") ?? ""
+            cell.setupCell(title: "Giới tính", content: sex)
         case 3:
-            cell.setupCell(title: "Tuổi", content: model.age)
+            let age = UserDefaults.standard.string(forKey: "Age") ?? ""
+            cell.setupCell(title: "Tuổi", content: age)
         case 4:
-            cell.setupCell(title: "Thành phố", content: model.city.name)
+            let cityName = UserDefaults.standard.string(forKey: "City Name") ?? ""
+            cell.setupCell(title: "Thành phố", content: cityName)
         case 5:
-            cell.setupCell(title: "Quận huyện", content: model.district.name)
+            let districtName = UserDefaults.standard.string(forKey: "District name") ?? ""
+            cell.setupCell(title: "Quận huyện", content: districtName)
         default:
             return UITableViewCell()
         }
